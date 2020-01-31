@@ -56,7 +56,7 @@ LANGUAGES = [
     ('de', 'German'),
 ]
 CMS_TEMPLATES = [
-    ('base.html', 'default page template'),
+    ('default.html', 'default page template'),
 ]
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
