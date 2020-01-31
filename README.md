@@ -19,6 +19,12 @@ Demonstrates the possibilities of custom apps and how to integrate them into the
 
 		$ ./scripts/run.py [--build] [CMD]
 
+- Create superuser for admin interface/cms:
+
+		$ ./scripts/exec_in_container.py 'python manage.py createsuperuser'
+
+	(enter username, etc)
+
 - Stop the Webserver
 
 		$ ./scripts/stop.py
