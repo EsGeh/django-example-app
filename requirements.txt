@@ -1,3 +1,9 @@
 Django==2.1.5
 pytz==2018.9
 psycopg2-binary==2.7.7
+
+# django cms:
+django-cms == 3.7.1
+django-treebeard == 4.3
+django-sekizai == 1.1.0
+djangocms-text-ckeditor
