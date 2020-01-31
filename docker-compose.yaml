@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: postgres:11
+    volumes:
+      - ./${DATABASE_DATA_DIR}:${DATABASE_DATA_DIR_IN_CONTAINER}
+    container_name: ${DB_CONTAINER}
+    user: ${USER}:${GROUP}
+    environment:
+      # postgres data dir
+      - PGDATA=${DATABASE_DATA_DIR_IN_CONTAINER}
+      # postgres user
+      - POSTGRES_USER=postgres
+
+  webserver:
+    depends_on:
+      - db
+    build: .
+    image: ${WEB_SERVER_IMAGE}
+    container_name: ${WEB_SERVER_CONTAINER}
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./${SRC_DIR}:${SRC_DIR_IN_CONTAINER}
+      - ./${RES_DIR_RUNTIME}:${RES_DIR_IN_CONTAINER}
+    working_dir: ${SRC_DIR_IN_CONTAINER}
+    environment:
+      - INSTALL_DIR=${SRC_DIR_IN_CONTAINER}
+      - RES_DIR=${RES_DIR_IN_CONTAINER}
+      - INPUT_DIR=${RES_DIR_IN_CONTAINER}/input
+    ports:
+      - "8009:8000"
+    user: ${USER}:${GROUP}
