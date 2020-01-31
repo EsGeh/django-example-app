@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
     'djangocms_admin_style', # django-cms
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +46,9 @@ INSTALLED_APPS = [
     'treebeard',
     'sekizai',
     'djangocms_text_ckeditor',
+
+    'polls.apps.PollsConfig',
+    'polls_cms_integration.apps.PollsCmsIntegrationConfig',
 ]
 
 # django-cms:
