@@ -7,3 +7,4 @@ django-cms == 3.7.1
 django-treebeard == 4.3
 django-sekizai == 1.1.0
 djangocms-text-ckeditor
+aldryn-apphooks-config

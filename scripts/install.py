@@ -68,7 +68,7 @@ def init_sqldb( config ):
         sleep( SQLDB_WAIT_TIME )
 
         exec_in_container(
-            "python", "manage.py", "makemigrations",
+            "python", "manage.py", "makemigrations", "polls", "faq", "polls_cms_integration",
             env=config,
         )
         exec_in_container(
