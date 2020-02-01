@@ -1,7 +1,7 @@
 # django-example-app
 
 Small django example app following the famous tutorial <https://docs.djangoproject.com/en/2.1/intro/>.
-Demonstrates the possibilities of custom apps and how to integrate them into the django-cms.
+Demonstrates the possibilities of custom apps and how to integrate them into the django-cms (<http://docs.django-cms.org/en/latest/how_to/custom_plugins.html>, and <http://docs.django-cms.org/en/latest/how_to/apphooks.html>)
 
 ## Dependencies
 
